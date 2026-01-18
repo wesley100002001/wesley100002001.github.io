@@ -1,0 +1,8 @@
+{
+  "name": "wesley-portfolio",
+  "version": "1.0.0",
+  "description": "Wesley Lin's Actor Portfolio",
+  "scripts": {
+    "dev": "python3 -m http.server 8080"
+  }
+}
