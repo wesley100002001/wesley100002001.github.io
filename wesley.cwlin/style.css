@@ -111,6 +111,44 @@ body {
     transform: translateY(-2px);
 }
 
+/* Upcoming Show Button */
+.upcoming-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 24px;
+    background: white;
+    color: #ce4b4d;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 2px solid #ce4b4d;
+}
+
+.upcoming-btn:hover {
+    background: rgba(206, 75, 77, 0.05);
+    transform: translateY(-2px);
+}
+
+.upcoming-title {
+    font-weight: 600;
+}
+
+.upcoming-badge {
+    background: #ce4b4d;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 /* Award Section */
 .award-section {
     background: white;
