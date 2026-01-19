@@ -84,7 +84,7 @@ const experiences = {
       title: "赴會",
       year: 2025,
       role: "知識份子、農民",
-      thumbnail: "assets/images/award/fringe-2025.webp",
+      thumbnail: "assets/images/theater/fringe-2025-赴會.webp",
       link: ""
     },
     {
@@ -97,9 +97,9 @@ const experiences = {
     {
       title: "開在壁上的花",
       year: 2024,
-      role: "呂沙棠",
-      thumbnail: "",
-      link: ""
+      role: "僧人、呂沙棠",
+      thumbnail: "assets/images/theater/海島演劇 - 開在壁上的花.webp",
+      link: "https://www.instagram.com/p/CsqlNChSdVV"
     },
     {
       title: "恐龍復活了",
