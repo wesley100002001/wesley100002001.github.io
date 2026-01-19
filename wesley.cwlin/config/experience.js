@@ -3,7 +3,7 @@ const experiences = {
     badge: "2025 藝穗精選獎",
     title: "築粹劇場《赴會》",
     description: "全台語演出，自在切換知識份子與農民",
-    thumbnail: "assets/images/award/fringe-2025.jpg",
+    thumbnail: "assets/images/award/fringe-2025.webp",
     link: ""
   },
 
@@ -84,7 +84,7 @@ const experiences = {
       title: "赴會",
       year: 2025,
       role: "知識份子、農民",
-      thumbnail: "assets/images/award/fringe-2025.jpg",
+      thumbnail: "assets/images/award/fringe-2025.webp",
       link: ""
     },
     {

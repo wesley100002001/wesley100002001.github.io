@@ -127,7 +127,7 @@
 
             card.innerHTML = `
                 <div class="card-image">
-                    <img src="${thumbnail}" alt="${item.title}">
+                    <img src="${thumbnail}" alt="${item.title}" loading="lazy">
                 </div>
                 <div class="card-content">
                     <h3>${item.title}</h3>
@@ -152,7 +152,7 @@
 
             container.innerHTML = `
                 <div class="award-image">
-                    <img src="${thumbnail}" alt="${award.badge}">
+                    <img src="${thumbnail}" alt="${award.badge}" loading="lazy">
                 </div>
                 <div class="award-content">
                     <span class="award-badge">
