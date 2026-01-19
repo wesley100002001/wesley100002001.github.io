@@ -12,8 +12,8 @@ const experiences = {
       title: "百味人生",
       year: 2025,
       role: "胡律師",
-      thumbnail: "",
-      link: ""
+      thumbnail: "assets/images/drama/2025百味人生胡律師.webp",
+      link: "https://youtu.be/U0tfidqYRTg?si=bB7dHIOsgOFvvB8O&t=3150"
     },
     {
       title: "人生只租不賣",
