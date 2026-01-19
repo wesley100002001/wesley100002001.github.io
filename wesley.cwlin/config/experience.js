@@ -9,7 +9,7 @@ const experiences = {
 
   drama: [
     {
-      title: "百味人生",
+      title: "百味人生 EP56",
       year: 2025,
       role: "胡律師",
       thumbnail: "assets/images/drama/2025百味人生胡律師.webp",
