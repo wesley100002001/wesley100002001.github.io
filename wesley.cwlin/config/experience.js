@@ -61,7 +61,7 @@ const experiences = {
       year: 2024,
       role: "白目球場觀眾",
       thumbnail: "assets/images/music-video/ba-re1.jpg",
-      link: "https://www.instagram.com/wesley.cwlin/"
+      link: "https://www.instagram.com/reel/C-pko6Svb2Q"
     },
     {
       title: "Asahi 啤酒",
