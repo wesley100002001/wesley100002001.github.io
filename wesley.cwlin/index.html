@@ -146,6 +146,8 @@
 
             const thumbnail = item.thumbnail || 'https://via.placeholder.com/300x200';
 
+            const languageTag = item.language ? `<span class="language-tag">${item.language}</span>` : '';
+
             card.innerHTML = `
                 <div class="card-image">
                     <img src="${thumbnail}" alt="${item.title}" loading="lazy">
@@ -153,7 +155,7 @@
                 <div class="card-content">
                     <h3>${item.title}</h3>
                     <p class="role">${item.role}</p>
-                    <p class="year">${item.year}</p>
+                    <p class="year">${item.year}${languageTag}</p>
                 </div>
             `;
 

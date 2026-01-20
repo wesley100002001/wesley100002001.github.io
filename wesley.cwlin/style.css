@@ -324,9 +324,20 @@ body {
 }
 
 .card-content .year {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 0.75rem;
     color: #ce4b4d;
     font-weight: 500;
+}
+
+.card-content .language-tag {
+    background: #e8e8e8;
+    color: #666;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
 /* Skills Grid */

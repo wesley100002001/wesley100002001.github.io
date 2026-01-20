@@ -12,6 +12,7 @@ const experiences = {
       title: "百味人生 EP56",
       year: 2025,
       role: "胡律師",
+      language: "台語",
       thumbnail: "assets/images/drama/2025百味人生胡律師.webp",
       link: "https://youtu.be/U0tfidqYRTg?si=bB7dHIOsgOFvvB8O&t=3150"
     },
@@ -19,6 +20,7 @@ const experiences = {
       title: "赴會",
       year: 2025,
       role: "知識份子、農民",
+      language: "台語",
       thumbnail: "assets/images/theater/fringe-2025-赴會.webp",
       link: ""
     },
@@ -26,29 +28,31 @@ const experiences = {
       title: "查某人的話",
       year: 2025,
       role: "市場老闆、中風老人",
+      language: "台語",
       thumbnail: "assets/images/theater/woman-word2.jpg",
       link: "https://www.instagram.com/reel/DNgKljwTWHD"
-    },
-    {
-      title: "開在壁上的花",
-      year: 2024,
-      role: "僧人、呂沙棠",
-      thumbnail: "assets/images/theater/海島演劇 - 開在壁上的花.webp",
-      link: "https://www.instagram.com/p/CsqlNChSdVV"
     },
     {
       title: "恐龍復活了",
       year: "2018-2025",
       role: "暴龍操偶師、歌隊演員",
       thumbnail: "assets/images/theater/恐龍復活了.webp",
-      link: ""
+      link: "https://www.instagram.com/reel/DIRJbXnMiiF"
     },
     {
       title: "彼得與狼",
       year: "2025",
       role: "一人分飾六角",
-      thumbnail: "",
-      link: ""
+      thumbnail: "assets/images/theater/2025彼得與狼.webp",
+      link: "https://www.instagram.com/reel/DJ83Qqiy_qk"
+    },
+    {
+      title: "開在壁上的花",
+      year: 2024,
+      role: "僧人、呂沙棠",
+      language: "台語",
+      thumbnail: "assets/images/theater/海島演劇 - 開在壁上的花.webp",
+      link: "https://www.instagram.com/p/CsqlNChSdVV"
     }
   ],
 
