@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "Wesley Lin's Actor Portfolio",
   "scripts": {
-    "dev": "python3 -m http.server 8080"
+    "dev": "python3 -m http.server 41789"
   }
 }

@@ -9,10 +9,10 @@ This is Wesley Lin's actor portfolio website, hosted on GitHub Pages. It's a sta
 ## Development
 
 ```bash
-npm run dev          # Start local server at http://localhost:8080
+npm run dev          # Start local server at http://localhost:41789
 ```
 
-Then visit http://localhost:8080/wesley.cwlin/ to preview the portfolio.
+Then visit http://localhost:41789/wesley.cwlin/ to preview the portfolio.
 
 ## Architecture
 

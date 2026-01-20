@@ -7,7 +7,7 @@ const experiences = {
     link: ""
   },
 
-  drama: [
+  filmTheater: [
     {
       title: "百味人生 EP56",
       year: 2025,
@@ -15,71 +15,6 @@ const experiences = {
       thumbnail: "assets/images/drama/2025百味人生胡律師.webp",
       link: "https://youtu.be/U0tfidqYRTg?si=bB7dHIOsgOFvvB8O&t=3150"
     },
-    {
-      title: "人生只租不賣",
-      year: 2025,
-      role: "攝影記者",
-      thumbnail: "",
-      link: ""
-    },
-    {
-      title: "成名在望",
-      year: 2024,
-      role: "記者",
-      thumbnail: "",
-      link: ""
-    }
-  ],
-
-  movie: [
-    {
-      title: "搜查瑠公圳",
-      year: 2025,
-      role: "記者",
-      thumbnail: "",
-      link: ""
-    },
-    {
-      title: "南榕（待播）",
-      year: 2025,
-      role: "記者",
-      thumbnail: "",
-      link: ""
-    },
-    {
-      title: "靜曦",
-      year: 2025,
-      role: "山友",
-      thumbnail: "",
-      link: ""
-    }
-  ],
-
-  commercial: [
-    {
-      title: "羅時豐《巴蕊》",
-      year: 2024,
-      role: "白目球場觀眾",
-      thumbnail: "assets/images/music-video/ba-re1.jpg",
-      link: "https://www.instagram.com/reel/C-pko6Svb2Q"
-    },
-    {
-      title: "Asahi 啤酒",
-      year: 2024,
-      role: "主角同事",
-      thumbnail: "",
-      link: ""
-    },
-    {
-      title: "太平洋房屋",
-      year: 2024,
-      role: "看房租客",
-      thumbnail: "",
-      link: ""
-    }
-  ],
-
-  theater: [
     {
       title: "赴會",
       year: 2025,
@@ -104,9 +39,40 @@ const experiences = {
     {
       title: "恐龍復活了",
       year: "2018-2025",
-      role: "操偶師、演員",
+      role: "暴龍操偶師、歌隊演員",
+      thumbnail: "assets/images/theater/恐龍復活了.webp",
+      link: ""
+    },
+    {
+      title: "彼得與狼",
+      year: "2025",
+      role: "一人分飾六角",
       thumbnail: "",
       link: ""
+    }
+  ],
+
+  commercial: [
+    {
+      title: "桃園大龍門鱻漫遊嘉年華",
+      year: 2025,
+      role: "年輕爸爸",
+      thumbnail: "assets/images/commercials/2025桃園大龍門.webp",
+      link: "https://www.facebook.com/reel/816990364191973"
+    },
+    {
+      title: "羅時豐《巴蕊》",
+      year: 2024,
+      role: "白目球場觀眾",
+      thumbnail: "assets/images/music-video/ba-re1.jpg",
+      link: "https://www.instagram.com/reel/C-pko6Svb2Q"
+    },
+    {
+      title: "太平洋房屋",
+      year: 2024,
+      role: "看房租客",
+      thumbnail: "assets/images/commercials/2024太平洋房屋.webp",
+      link: "https://www.youtube.com/watch?v=bYA5NF7yOhM&t=116s"
     }
   ]
 };

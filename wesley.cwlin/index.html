@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>林家偉 Wesley Lin | 演員作品集</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,33 +41,22 @@
         <a href="https://drive.google.com/file/d/1lFgPL-tpofC0eMXst_N3XPUMihWZJh5Z/view" target="_blank" class="cv-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
             </svg>
             完整演員履歷 CV
         </a>
 
         <!-- Upcoming Show Button -->
-        <a href="https://www.opentix.life/event/2008079369157742593" target="_blank" class="upcoming-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
-                <path d="M16 2v4"></path>
-                <path d="M8 2v4"></path>
-                <path d="M3 10h18"></path>
-            </svg>
-            <span class="upcoming-title">3/6-8《The Pride》讀演版</span>
-            <span class="upcoming-badge">熱賣中！</span>
-        </a>
+        <div id="upcoming-show"></div>
 
         <!-- Award Highlight -->
         <section class="award-section" id="award-section"></section>
 
-        <!-- 戲劇 Drama -->
+        <!-- 影視／劇場 -->
         <section class="section">
-            <h2 class="section-title">戲劇 <span class="section-subtitle">Drama</span></h2>
-            <div class="card-grid" id="drama-grid"></div>
+            <h2 class="section-title">影視／劇場</h2>
+            <div class="card-grid" id="film-theater-grid"></div>
         </section>
 
         <!-- Photo Highlight -->
@@ -81,27 +71,15 @@
             </div>
         </section>
 
-        <!-- 電影 Movie -->
+        <!-- 廣告／MV -->
         <section class="section">
-            <h2 class="section-title">電影 <span class="section-subtitle">Movie</span></h2>
-            <div class="card-grid" id="movie-grid"></div>
-        </section>
-
-        <!-- 廣告 MV Commercial -->
-        <section class="section">
-            <h2 class="section-title">廣告 MV <span class="section-subtitle">Commercial</span></h2>
+            <h2 class="section-title">廣告／MV</h2>
             <div class="card-grid" id="commercial-grid"></div>
         </section>
 
-        <!-- 舞台劇 Theater -->
+        <!-- 語言／才藝 -->
         <section class="section">
-            <h2 class="section-title">舞台劇 <span class="section-subtitle">Theater</span></h2>
-            <div class="card-grid" id="theater-grid"></div>
-        </section>
-
-        <!-- 其它才藝 Skills -->
-        <section class="section">
-            <h2 class="section-title">其它才藝 <span class="section-subtitle">Skills</span></h2>
+            <h2 class="section-title">語言／才藝</h2>
             <div class="skills-grid">
                 <div class="skill-item">
                     <span class="skill-label">專長</span>
@@ -139,6 +117,24 @@
 
     <script type="module">
         import experiences from './config/experience.js';
+        import upcomingShow from './config/upcomingShows.js';
+
+        function renderUpcomingShow(show) {
+            const container = document.getElementById('upcoming-show');
+            if (!show || !show.link) {
+                container.style.display = 'none';
+                return;
+            }
+            container.innerHTML = `
+                <a href="${show.link}" target="_blank" class="upcoming-btn">
+                    <div class="upcoming-text">
+                        <span class="upcoming-title">${show.title}</span>
+                        <span class="upcoming-subtitle">${show.date}｜${show.location}</span>
+                    </div>
+                    <span class="upcoming-badge">熱賣中！</span>
+                </a>
+            `;
+        }
 
         function createCard(item) {
             const card = document.createElement('a');
@@ -192,11 +188,10 @@
             `;
         }
 
+        renderUpcomingShow(upcomingShow);
         renderAward(experiences.award);
-        renderSection('drama-grid', experiences.drama);
-        renderSection('movie-grid', experiences.movie);
+        renderSection('film-theater-grid', experiences.filmTheater);
         renderSection('commercial-grid', experiences.commercial);
-        renderSection('theater-grid', experiences.theater);
     </script>
 </body>
 
