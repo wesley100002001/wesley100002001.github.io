@@ -154,6 +154,11 @@ body {
     color: #888;
 }
 
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
 .upcoming-badge {
     position: absolute;
     top: -15px;
@@ -164,6 +169,7 @@ body {
     border-radius: 12px;
     font-size: 0.7rem;
     font-weight: 500;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 /* Award Section */
