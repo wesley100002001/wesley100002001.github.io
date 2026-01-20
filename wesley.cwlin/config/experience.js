@@ -22,7 +22,7 @@ const experiences = {
       role: "知識份子、農民",
       language: "台語",
       thumbnail: "assets/images/theater/fringe-2025-赴會.webp",
-      link: ""
+      link: "https://www.instagram.com/p/DO3phahj6Gf"
     },
     {
       title: "查某人的話",
