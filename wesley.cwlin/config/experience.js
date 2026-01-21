@@ -9,7 +9,7 @@ const experiences = {
 
   filmTheater: [
     {
-      title: "百味人生 EP56",
+      title: "百味人生 EP56、70",
       year: 2025,
       role: "胡律師",
       language: "台語",
