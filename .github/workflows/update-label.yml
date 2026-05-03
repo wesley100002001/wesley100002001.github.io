@@ -1,0 +1,32 @@
+name: Update Label
+on:
+  workflow_dispatch:
+jobs:
+  update-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update casting-info label
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.issues.updateLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'casting-info',
+                color: '0E8A16',
+                description: '每日徵選資訊'
+              });
+              console.log('Label updated successfully');
+            } catch (e) {
+              console.log('Update failed, trying create:', e.message);
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'casting-info',
+                color: '0E8A16',
+                description: '每日徵選資訊'
+              });
+              console.log('Label created successfully');
+            }
