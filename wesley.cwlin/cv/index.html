@@ -407,6 +407,23 @@
             grid-template-columns: 1.15fr 1fr;
         }
 
+        /* 交錯高低：等寬直幅，一高一低錯開 */
+        .grid.stagger {
+            gap: 16px;
+        }
+
+        .grid.stagger>.shot {
+            height: 88%;
+        }
+
+        .grid.stagger>.shot:nth-child(even) {
+            align-self: end;
+        }
+
+        .grid.stagger .shot img {
+            object-position: center 12%;
+        }
+
         .grid.feature .rest {
             display: grid;
             gap: 12px;
@@ -670,6 +687,10 @@
                 display: contents;
             }
 
+            .grid.stagger>.shot {
+                height: auto;
+            }
+
             .grid>.shot:first-child {
                 grid-column: 1 / -1;
                 aspect-ratio: 4 / 3;
@@ -883,7 +904,7 @@
             const [first, ...rest] = s.photos;
             const grid = s.layout === 'feature' && rest.length
                 ? `<div class="grid feature">${shot(first)}<div class="rest" style="${restLayout(rest.length)}">${rest.map(shot).join('')}</div></div>`
-                : `<div class="grid even">${s.photos.map(shot).join('')}</div>`;
+                : `<div class="grid even ${s.layout === 'stagger' ? 'stagger' : ''}">${s.photos.map(shot).join('')}</div>`;
 
             return `
                 <section class="slide gallery">

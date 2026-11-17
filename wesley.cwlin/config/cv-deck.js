@@ -28,6 +28,7 @@ const cvDeck = {
     "這兩三年開始，喜歡在生活裡使用台語，珍惜可以跟父母用台語聊天的機會。"
   ],
 
+  // layout：feature 主照片＋其餘、even 等寬一排、stagger 等寬一高一低
   // 照片欄位：pos 是裁切時對齊的位置（CSS object-position），頭被切到時用 "center top"；video 是影片檔，src 當封面（PDF 用）；mobileZoom 是手機版放大倍數，focus 是要放在中間的點（臉）
   slides: [
     { type: "cover", photo: "cover.jpg" },
@@ -89,9 +90,9 @@ const cvDeck = {
     { type: "gallery", title: "模特經歷", creditIds: ["artistry-2024", "fujen-2025"], layout: "feature",
       photos: [{ src: "model-1.jpg" }, { src: "model-2.jpg" }] },
 
-    { type: "gallery", title: "形象參考", layout: "feature",
+    { type: "gallery", title: "形象參考", layout: "stagger",
       photos: [{ src: "look1-1.jpg" }, { src: "look1-2.jpg", pos: "center top" }, { src: "look1-3.jpg" }, { src: "look1-4.jpg" }] },
-    { type: "gallery", title: "形象參考", layout: "feature",
+    { type: "gallery", title: "形象參考", layout: "stagger",
       photos: [{ src: "look2-1.jpg", pos: "center top" }, { src: "look2-2.jpg" }, { src: "look2-3.jpg" }, { src: "look2-4.jpg", pos: "30% center" }] },
     { type: "gallery", title: "形象參考", layout: "even",
       photos: [{ src: "look3-1.jpg" }, { src: "look3-2.jpg" }, { src: "look3-3.jpg" }] },
