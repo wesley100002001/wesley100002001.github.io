@@ -500,6 +500,17 @@
             line-height: 2;
         }
 
+        .contact-list a {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: var(--line);
+            text-underline-offset: 4px;
+        }
+
+        .contact-list a:hover {
+            color: var(--primary);
+        }
+
         .contact-list span {
             display: inline-block;
             width: 82px;
@@ -921,18 +932,18 @@
 
         function contact(s) {
             const items = [
-                ['Email', cvDeck.email],
-                ['Phone', cvDeck.phone],
+                ['Email', cvDeck.email, `mailto:${cvDeck.email}`],
+                ['Phone', cvDeck.phone, `tel:${String(cvDeck.phone).replace(/-/g, '')}`],
                 ['LINE', cvDeck.line],
-                ['Instagram', cvDeck.instagram],
-                ['Website', cvDeck.website]
+                ['Instagram', cvDeck.instagram, `https://www.instagram.com/${String(cvDeck.instagram).replace('@', '')}/`],
+                ['Website', cvDeck.website, `https://${cvDeck.website}/`]
             ].filter(([, v]) => v);
             return `
                 <section class="slide contact">
                     <div class="contact-body">
                         <p class="thanks">謝謝您閱讀完畢，<br>期待有機會一起合作！</p>
                         <p class="eyebrow" style="margin-bottom:8px">CONTACT</p>
-                        <ul class="contact-list">${items.map(([k, v]) => `<li><span>${k}</span>${esc(v)}</li>`).join('')}</ul>
+                        <ul class="contact-list">${items.map(([k, v, href]) => `<li><span>${k}</span>${href ? `<a href="${esc(href)}">${esc(v)}</a>` : esc(v)}</li>`).join('')}</ul>
                         <div class="qr">
                             ${s.qr.map((q) => `<figure><img src="${IMG}${q.src}" alt="${esc(q.label)} QR code"><figcaption>${esc(q.label)}</figcaption></figure>`).join('')}
                         </div>
