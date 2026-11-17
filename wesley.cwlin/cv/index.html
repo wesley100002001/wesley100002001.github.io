@@ -599,7 +599,8 @@
                 display: none;
             }
 
-            .credits-card {
+            .credits-card,
+            .photo-left .credits-card {
                 position: static;
                 width: auto;
                 max-height: none;
@@ -660,6 +661,11 @@
             .grid>.shot:first-child {
                 grid-column: 1 / -1;
                 aspect-ratio: 4 / 3;
+            }
+
+            /* 直的主照片在手機上用 4:5，4:3 會把頭切掉 */
+            .grid>.shot.portrait:first-child {
+                aspect-ratio: 4 / 5;
             }
 
             .shot {
@@ -839,7 +845,7 @@
         function shot(p) {
             return `
                 <figure class="shot ${p.fit === 'contain' ? 'contain' : ''}">
-                    <img src="${IMG}${p.src}" alt="">
+                    <img src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
                     ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
                 </figure>`;
         }
@@ -896,6 +902,12 @@
 
         const RENDER = { cover, profile, intro, credits: creditsSlide, gallery, contact };
         document.getElementById('deck').innerHTML = cvDeck.slides.map((s) => RENDER[s.type](s)).join('');
+
+        // 標記直的照片，手機版面依此決定主照片比例
+        document.querySelectorAll('.shot img').forEach((img) => {
+            const mark = () => img.closest('.shot').classList.toggle('portrait', img.naturalHeight > img.naturalWidth);
+            img.complete ? mark() : img.addEventListener('load', mark);
+        });
 
         function checkOverflow() {
             document.querySelectorAll('.slide, .credits-card').forEach((el) => {

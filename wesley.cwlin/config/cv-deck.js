@@ -28,6 +28,7 @@ const cvDeck = {
     "這兩三年開始，喜歡在生活裡使用台語，珍惜可以跟父母用台語聊天的機會。"
   ],
 
+  // 照片欄位：pos 是裁切時對齊的位置（CSS object-position），頭被切到時用 "center top"
   slides: [
     { type: "cover", photo: "cover.jpg" },
     { type: "profile", photo: "profile.jpg" },
@@ -89,9 +90,9 @@ const cvDeck = {
       photos: [{ src: "model-1.jpg" }, { src: "model-2.jpg" }] },
 
     { type: "gallery", title: "形象參考", layout: "feature",
-      photos: [{ src: "look1-1.jpg" }, { src: "look1-2.jpg" }, { src: "look1-3.jpg" }, { src: "look1-4.jpg" }] },
+      photos: [{ src: "look1-1.jpg" }, { src: "look1-2.jpg", pos: "center top" }, { src: "look1-3.jpg" }, { src: "look1-4.jpg" }] },
     { type: "gallery", title: "形象參考", layout: "feature",
-      photos: [{ src: "look2-1.jpg" }, { src: "look2-2.jpg" }, { src: "look2-3.jpg" }, { src: "look2-4.jpg" }] },
+      photos: [{ src: "look2-1.jpg", pos: "center top" }, { src: "look2-2.jpg" }, { src: "look2-3.jpg" }, { src: "look2-4.jpg", pos: "30% center" }] },
     { type: "gallery", title: "形象參考", layout: "even",
       photos: [{ src: "look3-1.jpg" }, { src: "look3-2.jpg" }, { src: "look3-3.jpg" }] },
     { type: "gallery", title: "形象參考", layout: "even",
