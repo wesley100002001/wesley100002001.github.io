@@ -46,7 +46,7 @@ const cvDeck = {
     { type: "gallery", title: "試鏡帶｜入選特約角色　記者", subtitle: "影集《成名在望》、影集《人生只租不賣》、電影《搜查瑠公圳》", layout: "even",
       photos: [{ src: "reporter-1.jpg" }, { src: "reporter-2.jpg" }] },
 
-    { type: "credits", title: "近期劇場作品", background: "bg-stage.jpg", roleLabel: "製作", showCompany: true,
+    { type: "credits", title: "近期劇場作品", background: "bg-stage.jpg", photoShift: 200, roleLabel: "製作", showCompany: true,
       groups: [
         { label: "台語戲劇", ids: ["fuhui-2025", "woman-words-2025", "wall-flower-2024", "just-sing-2023"] },
         { label: "戲劇", ids: ["pride-2026", "dogcat-2026", "peter-wolf-2025", "baby-symphony-2025", "aiya-reading-2025", "taiwan-comedy-2025", "thursday-comedy-2024", "love-distance-2024"] },

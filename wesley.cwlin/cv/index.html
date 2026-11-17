@@ -220,6 +220,7 @@
 
         /* ---------- 作品列表：照片在一側，列表那側漸層融成紙色（.dark 壓黑） ---------- */
         .credits {
+            background: var(--paper);
             --fade: var(--paper);
             --fade-clear: rgba(250, 248, 246, 0);
         }
@@ -228,6 +229,8 @@
             --fade: rgba(18, 18, 18, 0.94);
             --fade-clear: rgba(18, 18, 18, 0.1);
             color: #f2efec;
+            /* 照片沒蓋到的地方用同一個黑，避免半透明壓在白底上變淡 */
+            background: rgb(18, 18, 18);
         }
 
         .credits-bg {
@@ -245,8 +248,9 @@
             right: 0;
         }
 
+        /* photoShift：照片往左移幾 px，讓人臉離開漸層 */
         .photo-left .credits-bg .photo {
-            left: 0;
+            left: var(--shift, 0);
         }
 
         .credits-bg::after {
@@ -815,7 +819,7 @@
         function creditsSlide(s) {
             return `
                 <section class="slide credits ${s.cardSide === 'left' ? 'photo-right' : 'photo-left'} ${s.tone === 'dark' ? 'dark' : ''}">
-                    <div class="credits-bg"><img class="photo" src="${IMG}${s.background}" alt=""></div>
+                    <div class="credits-bg" style="--shift: ${-(s.photoShift || 0)}px"><img class="photo" src="${IMG}${s.background}" alt=""></div>
                     <div class="credits-card">
                         <div class="credits-head">
                             <h2 class="slide-title">${esc(s.title)}</h2>
