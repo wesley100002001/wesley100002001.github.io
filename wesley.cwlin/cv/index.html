@@ -218,37 +218,92 @@
             font-weight: 500;
         }
 
-        /* ---------- 作品列表 ---------- */
+        /* ---------- 作品列表：照片在一側，列表那側漸層融成紙色（.dark 壓黑） ---------- */
+        .credits {
+            --fade: var(--paper);
+            --fade-clear: rgba(250, 248, 246, 0);
+        }
+
+        .credits.dark {
+            --fade: rgba(18, 18, 18, 0.94);
+            --fade-clear: rgba(18, 18, 18, 0.1);
+            color: #f2efec;
+        }
+
         .credits-bg {
             position: absolute;
             inset: 0;
+        }
+
+        .credits-bg .photo {
+            position: absolute;
+            width: auto;
+            max-width: none;
+        }
+
+        .photo-right .credits-bg .photo {
+            right: 0;
+        }
+
+        .photo-left .credits-bg .photo {
+            left: 0;
         }
 
         .credits-bg::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-right .credits-bg::after {
+            background: linear-gradient(to right, var(--fade) 58%, var(--fade-clear) 72%);
+        }
+
+        .photo-left .credits-bg::after {
+            background: linear-gradient(to left, var(--fade) 64%, var(--fade-clear) 78%);
         }
 
         .credits-card {
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 48px;
             height: fit-content;
             margin: auto 0;
-            width: 860px;
+            width: 780px;
             max-height: 640px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px 36px 22px;
+            padding: 30px 0 22px;
             display: flex;
             flex-direction: column;
         }
 
-        .credits-card.left {
-            right: auto;
-            left: 48px;
+        .photo-right .credits-card {
+            left: 64px;
+        }
+
+        .photo-left .credits-card {
+            right: 32px;
+            width: 760px;
+        }
+
+        .dark .credits-head {
+            border-color: #f2efec;
+        }
+
+        .dark .row {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .dark .row .y {
+            color: #9a9590;
+        }
+
+        .dark .row .r {
+            color: #cfcac5;
+        }
+
+        .dark .group-label,
+        .dark .eyebrow {
+            color: #e8797b;
         }
 
         .credits-head {
@@ -272,7 +327,7 @@
         }
 
         .group {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .group-label {
@@ -287,9 +342,9 @@
             display: grid;
             grid-template-columns: 48px 1fr auto;
             gap: 10px;
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.5;
-            padding: 5px 0;
+            padding: 4px 0;
             border-bottom: 1px solid var(--line);
         }
 
@@ -531,13 +586,26 @@
                 height: 180px;
             }
 
-            .credits-card,
-            .credits-card.left {
+            .credits-bg .photo {
+                position: static;
+                width: 100%;
+            }
+
+            .credits-bg::after {
+                display: none;
+            }
+
+            .credits-card {
                 position: static;
                 width: auto;
                 max-height: none;
                 margin: 0;
                 padding: 22px 20px 12px;
+                background: var(--paper);
+            }
+
+            .dark .credits-card {
+                background: #1c1c1c;
             }
 
             .credits-head .slide-title,
@@ -592,6 +660,19 @@
 
             .shot {
                 aspect-ratio: 3 / 4;
+            }
+
+            /* 落單的最後一張改成整列，照原比例顯示，避免橫的截圖被裁成直的 */
+            .grid.even>.shot:last-child:nth-child(even),
+            .grid.feature .rest>.shot:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+                aspect-ratio: auto;
+            }
+
+            .grid.even>.shot:last-child:nth-child(even) img,
+            .grid.feature .rest>.shot:last-child:nth-child(odd) img {
+                height: auto;
+                max-height: 80vh;
             }
 
             .contact-list {
@@ -733,9 +814,9 @@
 
         function creditsSlide(s) {
             return `
-                <section class="slide credits">
+                <section class="slide credits ${s.cardSide === 'left' ? 'photo-right' : 'photo-left'} ${s.tone === 'dark' ? 'dark' : ''}">
                     <div class="credits-bg"><img class="photo" src="${IMG}${s.background}" alt=""></div>
-                    <div class="credits-card ${s.cardSide === 'left' ? 'left' : ''}">
+                    <div class="credits-card">
                         <div class="credits-head">
                             <h2 class="slide-title">${esc(s.title)}</h2>
                             <span class="eyebrow">${esc(s.roleLabel)}</span>

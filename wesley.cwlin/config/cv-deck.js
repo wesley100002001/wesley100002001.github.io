@@ -33,7 +33,7 @@ const cvDeck = {
     { type: "profile", photo: "profile.jpg" },
     { type: "intro", photo: "intro.jpg" },
 
-    { type: "credits", title: "近期影視作品", background: "bg-screen.jpg", cardSide: "left", roleLabel: "飾演",
+    { type: "credits", title: "近期影視作品", background: "bg-screen.jpg", cardSide: "left", tone: "dark", roleLabel: "飾演",
       groups: [
         { label: "戲劇", ids: ["wave-makers-2", "presumed-2", "baiwei", "rent-life", "fame"] },
         { label: "電影", ids: ["beicheng", "liugongzun", "nanrong", "jingxi"] },
