@@ -909,7 +909,7 @@
             return `
                 <figure class="shot ${p.fit === 'contain' ? 'contain' : ''}">
                     ${p.video ? `<video src="${IMG}${p.video}" poster="${IMG}${p.src}" autoplay muted loop playsinline></video>` : ''}
-                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}${p.zoom || p.mobileZoom ? ` data-zoom="${p.zoom || ''}" data-mzoom="${p.mobileZoom || p.zoom}" data-focus="${p.focus}"` : ''}>
+                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
                     ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
                 </figure>`;
         }
@@ -973,37 +973,6 @@
             img.complete ? mark() : img.addEventListener('load', mark);
         });
 
-        // 放大照片（zoom；手機用 mobileZoom），並把 focus 那一點（通常是臉）移到格子中間，不露出空白
-        const phone = matchMedia('(max-width: 760px)');
-        function zoomShots() {
-            document.querySelectorAll('.shot img[data-zoom]').forEach((img) => {
-                const zoom = Number(phone.matches ? img.dataset.mzoom : img.dataset.zoom);
-                if (img.dataset.base === undefined) img.dataset.base = img.getAttribute('style') || '';
-                img.setAttribute('style', img.dataset.base);
-                if (!zoom || !img.naturalWidth) return;
-                const W = img.parentElement.clientWidth;
-                const H = img.parentElement.clientHeight;
-                const [fx, fy] = img.dataset.focus.split(' ').map((v) => parseFloat(v) / 100);
-                const scale = Math.max(W / img.naturalWidth, H / img.naturalHeight) * zoom;
-                const w = img.naturalWidth * scale;
-                const h = img.naturalHeight * scale;
-                const clamp = (v, min) => Math.min(0, Math.max(min, v));
-                Object.assign(img.style, {
-                    position: 'absolute', maxWidth: 'none', maxHeight: 'none',
-                    // 用百分比，列印時版面重排也不會跑掉
-                    width: `${(w / W) * 100}%`, height: `${(h / H) * 100}%`,
-                    left: `${(clamp(W / 2 - fx * w, W - w) / W) * 100}%`, top: `${(clamp(H / 2 - fy * h, H - h) / H) * 100}%`
-                });
-            });
-        }
-        // 格子大小會隨字型、其他照片載入而變，變了就重算
-        const resized = new ResizeObserver(zoomShots);
-        document.querySelectorAll('.shot img[data-zoom]').forEach((img) => {
-            img.addEventListener('load', zoomShots);
-            resized.observe(img.parentElement);
-        });
-        addEventListener('beforeprint', zoomShots);
-        zoomShots();
 
         function checkOverflow() {
             document.querySelectorAll('.slide, .credits-card').forEach((el) => {
