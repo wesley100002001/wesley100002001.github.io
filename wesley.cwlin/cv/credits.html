@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>林家偉 演出經歷總表</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ce4b4d;
+            --ink: #333;
+            --muted: #888;
+            --line: #eee;
+            --warn-bg: #fff6e0;
+            --warn: #a8700a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        .page-header {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .page-header h1 {
+            font-size: 24px;
+        }
+
+        .page-header p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .stat {
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 14px;
+        }
+
+        .stat b {
+            font-size: 18px;
+            margin-right: 4px;
+        }
+
+        .stat.warn b {
+            color: var(--warn);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .controls button {
+            font: inherit;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 999px;
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+
+        .controls button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 2px;
+            align-self: center;
+        }
+
+        .section-title small {
+            color: var(--muted);
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            font-weight: 500;
+            color: var(--muted);
+            font-size: 12px;
+            padding: 6px 8px 6px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        td {
+            padding: 8px 8px 8px 0;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        td.year {
+            width: 90px;
+            color: var(--primary);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        td.year.missing {
+            color: var(--warn);
+        }
+
+        .title {
+            font-weight: 500;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            border-radius: 4px;
+            padding: 0 6px;
+            margin-left: 4px;
+            vertical-align: 1px;
+        }
+
+        .badge.award {
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge.lang {
+            background: #f2e9e9;
+            color: var(--primary);
+        }
+
+        .check {
+            margin-top: 4px;
+            background: var(--warn-bg);
+            color: var(--warn);
+            font-size: 12px;
+            border-radius: 6px;
+            padding: 3px 8px;
+        }
+
+        .check::before {
+            content: "待確認：";
+            font-weight: 700;
+        }
+
+        .simple-list {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .simple-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .simple-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .simple-list b {
+            display: inline-block;
+            min-width: 64px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        body.only-check tr:not(.has-check),
+        body.only-check li:not(.has-check),
+        body.only-check .section:not(.has-check) {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .col-company {
+                display: none;
+            }
+
+            td.year {
+                width: 64px;
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>林家偉 演出經歷總表</h1>
+            <p>所有 CV 版本的資料來源。每次徵選從這裡挑選要放的經歷。</p>
+            <div class="stats" id="stats"></div>
+            <div class="controls">
+                <button class="active" data-filter="all">全部</button>
+                <button data-filter="check">只看待確認</button>
+            </div>
+        </header>
+
+        <main id="sections"></main>
+    </div>
+
+    <script type="module">
+        import credits from '../config/credits.js';
+
+        const SECTIONS = [
+            { key: 'awards', label: '獎項' },
+            { key: 'theater', label: '劇場', sub: '戲劇・音樂劇・讀劇・兒童劇・喜劇' },
+            { key: 'opera', label: '歌劇合唱' },
+            { key: 'concert', label: '演唱' },
+            { key: 'dance', label: '舞蹈' },
+            { key: 'tv', label: '電視劇' },
+            { key: 'film', label: '電影' },
+            { key: 'mv', label: 'MV' },
+            { key: 'commercial', label: '廣告' },
+            { key: 'online', label: '網路影片' },
+            { key: 'model', label: '模特' },
+            { key: 'training', label: '訓練背景' },
+            { key: 'education', label: '學歷' }
+        ];
+
+        const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+        function renderRow(item) {
+            const meta = [item.genre, item.company, item.venue, item.director && `導演 ${item.director}`, item.work && `《${item.work}》`]
+                .filter(Boolean).map(esc).join('｜');
+            const badges = [
+                item.award && `<span class="badge award">${esc(item.award)}</span>`,
+                item.language && `<span class="badge lang">${esc(item.language)}</span>`
+            ].filter(Boolean).join('');
+
+            return `
+                <tr class="${item.check ? 'has-check' : ''}">
+                    <td class="year ${item.year ? '' : 'missing'}">${item.year ? esc(item.year) : '年份？'}</td>
+                    <td>
+                        <div class="title">${esc(item.title)}${badges}</div>
+                        ${meta ? `<div class="meta">${meta}</div>` : ''}
+                        ${item.note ? `<div class="meta">${esc(item.note)}</div>` : ''}
+                        ${item.check ? `<div class="check">${esc(item.check)}</div>` : ''}
+                    </td>
+                    <td>${item.role ? esc(item.role) : '<span class="meta">—</span>'}</td>
+                </tr>`;
+        }
+
+        function renderSection({ key, label, sub }) {
+            const items = credits[key] || [];
+            if (!items.length) return '';
+            const hasCheck = items.some((i) => i.check);
+
+            if (key === 'education') {
+                return `
+                    <section class="section">
+                        <h2 class="section-title">${label}</h2>
+                        <ul class="simple-list">${items.map((i) => `<li>${esc(i.title)}</li>`).join('')}</ul>
+                    </section>`;
+            }
+
+            return `
+                <section class="section ${hasCheck ? 'has-check' : ''}">
+                    <h2 class="section-title">${label}<small>${items.length} 筆${sub ? `・${sub}` : ''}</small></h2>
+                    <table>
+                        <thead><tr><th>年份</th><th>作品</th><th>${key === 'training' || key === 'awards' ? '' : '角色'}</th></tr></thead>
+                        <tbody>${items.map(renderRow).join('')}</tbody>
+                    </table>
+                </section>`;
+        }
+
+        function renderSkills(skills) {
+            return `
+                <section class="section">
+                    <h2 class="section-title">語言與專長</h2>
+                    <ul class="simple-list">
+                        ${skills.languages.map((l) => `<li><b>${esc(l.level)}</b>${l.items.map(esc).join('、')}</li>`).join('')}
+                        <li><b>聲音</b>${skills.voice.map(esc).join('、')}</li>
+                        <li><b>肢體</b>${skills.movement.map(esc).join('、')}</li>
+                        <li><b>樂器</b>${skills.instruments.map(esc).join('、')}</li>
+                    </ul>
+                </section>`;
+        }
+
+        function renderStats() {
+            const all = SECTIONS.flatMap(({ key }) => credits[key] || []);
+            const stage = ['theater', 'opera', 'concert', 'dance'].flatMap((k) => credits[k]).length;
+            const screen = ['tv', 'film', 'mv', 'commercial', 'online'].flatMap((k) => credits[k]).length;
+            const checks = all.filter((i) => i.check).length;
+            document.getElementById('stats').innerHTML = `
+                <div class="stat"><b>${stage}</b>舞台作品</div>
+                <div class="stat"><b>${screen}</b>影像作品</div>
+                <div class="stat warn"><b>${checks}</b>筆待確認</div>`;
+        }
+
+        document.getElementById('sections').innerHTML =
+            SECTIONS.map(renderSection).join('') + renderSkills(credits.skills);
+        renderStats();
+
+        document.querySelectorAll('.controls button').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.controls button').forEach((b) => b.classList.toggle('active', b === btn));
+                document.body.classList.toggle('only-check', btn.dataset.filter === 'check');
+            });
+        });
+    </script>
+</body>
+
+</html>
