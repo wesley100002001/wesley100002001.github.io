@@ -500,15 +500,27 @@
             line-height: 2;
         }
 
+        /* 可點的聯絡方式：主色＋底線，外部連結再加 ↗ */
         .contact-list a {
-            color: inherit;
+            color: var(--primary);
+            font-weight: 500;
             text-decoration: underline;
-            text-decoration-color: var(--line);
+            text-decoration-color: rgba(206, 75, 77, 0.4);
+            text-decoration-thickness: 1px;
             text-underline-offset: 4px;
         }
 
         .contact-list a:hover {
-            color: var(--primary);
+            text-decoration-color: var(--primary);
+            text-decoration-thickness: 2px;
+        }
+
+        .contact-list a[href^="http"]::after {
+            content: "↗";
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 0.85em;
+            text-decoration: none;
         }
 
         .contact-list span {
