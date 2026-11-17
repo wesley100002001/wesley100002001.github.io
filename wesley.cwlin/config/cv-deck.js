@@ -46,7 +46,7 @@ const cvDeck = {
     { type: "gallery", title: "羅時豐《巴蕊》MV", subtitle: "飾 白目球場觀眾", layout: "feature",
       photos: [{ src: "bare-1.jpg" }, { src: "bare-2.jpg" }, { src: "bare-3.jpg" }] },
     { type: "gallery", title: "試鏡帶｜入選特約角色　記者", subtitle: "影集《成名在望》、影集《人生只租不賣》、電影《搜查瑠公圳》", layout: "even",
-      photos: [{ src: "reporter-1.jpg" }, { src: "reporter-2.jpg" }] },
+      photos: [{ src: "reporter-1.jpg" }, { src: "reporter-2.jpg", pos: "right center" }] },
 
     { type: "credits", title: "近期劇場作品", background: "bg-stage.jpg", photoShift: 200, roleLabel: "製作", showCompany: true,
       groups: [
