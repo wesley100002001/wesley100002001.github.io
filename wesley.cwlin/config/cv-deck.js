@@ -71,7 +71,7 @@ const cvDeck = {
       photos: [
         { src: "mouse-1.jpg", caption: "飾 軍官", pos: "92% center" },
         { src: "mouse-2.jpg" },
-        { src: "mouse-3.jpg" }
+        { src: "mouse-3.jpg", pos: "45% 60%" }
       ] },
     { type: "gallery", title: "《愛呀～讀劇之夜》", subtitle: "2025｜PHi 表演工作室", layout: "feature",
       photos: [
