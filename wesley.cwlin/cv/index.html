@@ -420,12 +420,18 @@
             background: white;
         }
 
-        .shot img {
+        .shot img,
+        .shot video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 25%;
             display: block;
+        }
+
+        /* 有影片時，圖片只在列印（PDF）時當封面 */
+        .shot .poster {
+            display: none;
         }
 
         .shot.contain img {
@@ -680,7 +686,9 @@
             }
 
             .grid.even>.shot:last-child:nth-child(even) img,
-            .grid.feature .rest>.shot:last-child:nth-child(odd) img {
+            .grid.feature .rest>.shot:last-child:nth-child(odd) img,
+            .grid.even>.shot:last-child:nth-child(even) video,
+            .grid.feature .rest>.shot:last-child:nth-child(odd) video {
                 height: auto;
                 max-height: 80vh;
             }
@@ -706,8 +714,13 @@
                 background: white;
             }
 
-            .download-btn {
+            .download-btn,
+            .shot video {
                 display: none;
+            }
+
+            .shot .poster {
+                display: block;
             }
 
             .slide {
@@ -845,7 +858,8 @@
         function shot(p) {
             return `
                 <figure class="shot ${p.fit === 'contain' ? 'contain' : ''}">
-                    <img src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
+                    ${p.video ? `<video src="${IMG}${p.video}" poster="${IMG}${p.src}" autoplay muted loop playsinline></video>` : ''}
+                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
                     ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
                 </figure>`;
         }

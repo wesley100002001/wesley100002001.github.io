@@ -28,7 +28,7 @@ const cvDeck = {
     "這兩三年開始，喜歡在生活裡使用台語，珍惜可以跟父母用台語聊天的機會。"
   ],
 
-  // 照片欄位：pos 是裁切時對齊的位置（CSS object-position），頭被切到時用 "center top"
+  // 照片欄位：pos 是裁切時對齊的位置（CSS object-position），頭被切到時用 "center top"；video 是影片檔，src 當封面（PDF 用）
   slides: [
     { type: "cover", photo: "cover.jpg" },
     { type: "profile", photo: "profile.jpg" },
@@ -75,13 +75,13 @@ const cvDeck = {
     { type: "gallery", title: "《愛呀～讀劇之夜》", subtitle: "2025｜PHi 表演工作室", layout: "feature",
       photos: [
         { src: "comedy-1.jpg", caption: "飾 小奶狗男友" },
-        { src: "comedy-2.jpg" },
-        { src: "comedy-3.jpg" }
+        { src: "comedy-2.jpg", pos: "right center" },
+        { src: "comedy-3.jpg", pos: "right center" }
       ] },
     { type: "gallery", title: "音樂劇《恐龍復活了》", subtitle: "AM 創意｜操偶師、操偶指導、歌隊", layout: "feature",
       photos: [
         { src: "dino-1.jpg", caption: "暴龍操偶（側台）" },
-        { src: "dino-2.jpg" }
+        { src: "dino-puppet.jpg", video: "dino-puppet.mp4" }
       ] },
 
     { type: "gallery", title: "舞蹈經歷", creditIds: ["dingdang-2026", "dingdang-2025", "muse-2022", "hahow-2022"], layout: "feature",
