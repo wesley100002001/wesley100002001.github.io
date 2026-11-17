@@ -452,12 +452,17 @@
         }
 
         /* ---------- 聯絡 ---------- */
+        /* 照片欄放寬到 800px，雙手才不會被切掉 */
         .contact {
-            grid-template-columns: minmax(0, 1fr) 520px;
+            grid-template-columns: minmax(0, 1fr) 800px;
+        }
+
+        .contact .photo {
+            object-position: 54% center;
         }
 
         .contact-body {
-            padding: 64px 56px;
+            padding: 64px 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -473,15 +478,16 @@
 
         .contact-list {
             list-style: none;
-            font-size: 18px;
+            font-size: 16px;
+            white-space: nowrap;
             line-height: 2;
         }
 
         .contact-list span {
             display: inline-block;
-            width: 92px;
+            width: 82px;
             color: var(--muted);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .qr {
@@ -556,7 +562,7 @@
 
             .contact .photo {
                 order: -1;
-                aspect-ratio: 1 / 1;
+                aspect-ratio: 3 / 2;
             }
 
             .cover-side {
@@ -859,7 +865,7 @@
             return `
                 <figure class="shot ${p.fit === 'contain' ? 'contain' : ''}">
                     ${p.video ? `<video src="${IMG}${p.video}" poster="${IMG}${p.src}" autoplay muted loop playsinline></video>` : ''}
-                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
+                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}${p.mobileZoom ? ` data-zoom="${p.mobileZoom}" data-focus="${p.focus}"` : ''}>
                     ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
                 </figure>`;
         }
@@ -922,6 +928,31 @@
             const mark = () => img.closest('.shot').classList.toggle('portrait', img.naturalHeight > img.naturalWidth);
             img.complete ? mark() : img.addEventListener('load', mark);
         });
+
+        // 手機版放大照片（mobileZoom），並把 focus 那一點（通常是臉）移到格子中間，不露出空白
+        const phone = matchMedia('(max-width: 760px)');
+        function zoomShots() {
+            document.querySelectorAll('.shot img[data-zoom]').forEach((img) => {
+                if (img.dataset.base === undefined) img.dataset.base = img.getAttribute('style') || '';
+                img.setAttribute('style', img.dataset.base);
+                if (!phone.matches || !img.naturalWidth) return;
+                const W = img.parentElement.clientWidth;
+                const H = img.parentElement.clientHeight;
+                const [fx, fy] = img.dataset.focus.split(' ').map((v) => parseFloat(v) / 100);
+                const scale = Math.max(W / img.naturalWidth, H / img.naturalHeight) * Number(img.dataset.zoom);
+                const w = img.naturalWidth * scale;
+                const h = img.naturalHeight * scale;
+                const clamp = (v, min) => Math.min(0, Math.max(min, v));
+                Object.assign(img.style, {
+                    position: 'absolute', maxWidth: 'none', maxHeight: 'none',
+                    width: `${w}px`, height: `${h}px`,
+                    left: `${clamp(W / 2 - fx * w, W - w)}px`, top: `${clamp(H / 2 - fy * h, H - h)}px`
+                });
+            });
+        }
+        document.querySelectorAll('.shot img[data-zoom]').forEach((img) => img.addEventListener('load', zoomShots));
+        addEventListener('resize', zoomShots);
+        zoomShots();
 
         function checkOverflow() {
             document.querySelectorAll('.slide, .credits-card').forEach((el) => {
