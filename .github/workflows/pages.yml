@@ -35,7 +35,7 @@ jobs:
           google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
             --virtual-time-budget=15000 \
             --print-to-pdf=wesley.cwlin/cv/wesley-lin-cv.pdf \
-            http://localhost:8000/wesley.cwlin/cv/
+            http://localhost:8000/wesley.cwlin/
           kill %1
 
       - name: Check PDF

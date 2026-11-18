@@ -4,215 +4,983 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林家偉 Wesley Lin | 演員作品集</title>
+    <title>林家偉 Wesley Lin｜演員履歷 CV</title>
+    <meta name="description" content="2025 臺北藝穗節藝穗精選獎《赴會》演員。台語母語，活躍於劇場、音樂劇與影視，近期作品《人選之人2》《無罪推定2》。">
+    <link rel="canonical" href="https://wesley100002001.github.io/wesley.cwlin/">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="林家偉 Wesley Lin">
+    <meta property="og:title" content="林家偉 Wesley Lin｜演員履歷 CV">
+    <meta property="og:description" content="2025 臺北藝穗節藝穗精選獎《赴會》演員。台語母語，活躍於劇場、音樂劇與影視，近期作品《人選之人2》《無罪推定2》。">
+    <meta property="og:url" content="https://wesley100002001.github.io/wesley.cwlin/">
+    <meta property="og:image" content="https://wesley100002001.github.io/wesley.cwlin/cv/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="林家偉 演員履歷 CV">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="林家偉 Wesley Lin｜演員履歷 CV">
+    <meta name="twitter:description" content="2025 臺北藝穗節藝穗精選獎《赴會》演員。台語母語，活躍於劇場、音樂劇與影視，近期作品《人選之人2》《無罪推定2》。">
+    <meta name="twitter:image" content="https://wesley100002001.github.io/wesley.cwlin/cv/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
         rel="stylesheet">
+    <style>
+        @page {
+            size: 1280px 720px;
+            margin: 0;
+        }
+
+        :root {
+            --primary: #ce4b4d;
+            --ink: #2a2a2a;
+            --muted: #8a8a8a;
+            --line: #ebe6e2;
+            --paper: #faf8f6;
+            --serif: 'Noto Serif TC', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Noto Sans TC', sans-serif;
+            background: #d9d6d3;
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .slide {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            margin: 24px auto;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .slide.overflow {
+            outline: 4px solid var(--primary);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            object-fit: cover;
+            object-position: center 25%;
+            display: block;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            letter-spacing: 0.3em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .slide-title {
+            font-family: var(--serif);
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1.3;
+        }
+
+        .slide-subtitle {
+            color: var(--muted);
+            font-size: 16px;
+            margin-top: 4px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-size: 12px;
+            border-radius: 3px;
+            padding: 1px 8px;
+            margin-left: 6px;
+            vertical-align: 2px;
+            font-weight: 500;
+        }
+
+        /* ---------- 封面 ---------- */
+        .cover,
+        .split,
+        .contact {
+            display: grid;
+            grid-template-rows: 100%;
+        }
+
+        .cover {
+            grid-template-columns: minmax(0, 1fr) 520px;
+        }
+
+        .cover-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            background: var(--paper);
+        }
+
+        .cover-name {
+            writing-mode: vertical-rl;
+            font-family: var(--serif);
+            font-size: 120px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            line-height: 1;
+            border-right: 6px solid var(--primary);
+            padding-right: 18px;
+        }
+
+        .cover-en {
+            font-size: 22px;
+            letter-spacing: 0.35em;
+            font-weight: 300;
+        }
+
+        .cover-award {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.12em;
+            border-top: 1px solid var(--primary);
+            border-bottom: 1px solid var(--primary);
+            padding: 4px 12px;
+        }
+
+        /* ---------- 基本資料、自我介紹 ---------- */
+        .split {
+            grid-template-columns: 500px minmax(0, 1fr);
+        }
+
+        .split-body {
+            padding: 64px 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .block+.block {
+            margin-top: 28px;
+        }
+
+        .block h2 {
+            font-family: var(--serif);
+            font-size: 22px;
+            letter-spacing: 0.1em;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--ink);
+            display: inline-block;
+        }
+
+        .kv {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        .kv dt {
+            color: var(--muted);
+        }
+
+        .plain {
+            font-size: 17px;
+            line-height: 1.85;
+            list-style: none;
+        }
+
+        .intro-text p {
+            font-size: 22px;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .intro-text p+p {
+            margin-top: 22px;
+        }
+
+        .intro-text p:first-child {
+            font-weight: 500;
+        }
+
+        /* ---------- 作品列表：照片在一側，列表那側漸層融成紙色（.dark 壓黑） ---------- */
+        .credits {
+            background: var(--paper);
+            --fade: var(--paper);
+            --fade-clear: rgba(250, 248, 246, 0);
+        }
+
+        .credits.dark {
+            --fade: rgba(18, 18, 18, 0.94);
+            --fade-clear: rgba(18, 18, 18, 0.1);
+            color: #f2efec;
+            /* 照片沒蓋到的地方用同一個黑，避免半透明壓在白底上變淡 */
+            background: rgb(18, 18, 18);
+        }
+
+        .credits-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .credits-bg .photo {
+            position: absolute;
+            width: auto;
+            max-width: none;
+        }
+
+        .photo-right .credits-bg .photo {
+            right: 0;
+        }
+
+        /* photoShift：照片往左移幾 px，讓人臉離開漸層 */
+        .photo-left .credits-bg .photo {
+            left: var(--shift, 0);
+        }
+
+        .credits-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+
+        .photo-right .credits-bg::after {
+            background: linear-gradient(to right, var(--fade) 58%, var(--fade-clear) 72%);
+        }
+
+        .photo-left .credits-bg::after {
+            background: linear-gradient(to left, var(--fade) 64%, var(--fade-clear) 78%);
+        }
+
+        .credits-card {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: fit-content;
+            margin: auto 0;
+            width: 780px;
+            max-height: 640px;
+            padding: 30px 0 22px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-right .credits-card {
+            left: 64px;
+        }
+
+        .photo-left .credits-card {
+            right: 32px;
+            width: 760px;
+        }
+
+        .dark .credits-head {
+            border-color: #f2efec;
+        }
+
+        .dark .row {
+            border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .dark .row .y {
+            color: #9a9590;
+        }
+
+        .dark .row .r {
+            color: #cfcac5;
+        }
+
+        .dark .group-label,
+        .dark .eyebrow {
+            color: #e8797b;
+        }
+
+        .credits-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        .credits-head .slide-title {
+            font-size: 28px;
+        }
+
+        .credits-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 36px;
+            align-items: start;
+        }
+
+        .group {
+            margin-bottom: 12px;
+        }
+
+        .group-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            gap: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .row .y {
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .row .r {
+            color: #555;
+            text-align: right;
+            max-width: 200px;
+        }
+
+        /* ---------- 照片頁 ---------- */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            padding: 40px 48px 44px;
+            background: var(--paper);
+        }
+
+        .gallery-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 32px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-credits {
+            list-style: none;
+            font-size: 16px;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .gallery-credits span {
+            color: var(--muted);
+            margin-right: 10px;
+        }
+
+        .grid {
+            flex: 1;
+            min-height: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .grid.even {
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+        }
+
+        .grid.feature {
+            grid-template-columns: 1.15fr 1fr;
+        }
+
+        /* 交錯高低：等寬直幅，一高一低錯開 */
+        .grid.stagger {
+            gap: 16px;
+        }
+
+        .grid.stagger>.shot {
+            height: 88%;
+        }
+
+        .grid.stagger>.shot:nth-child(even) {
+            align-self: end;
+        }
+
+        .grid.stagger .shot img {
+            object-position: center 12%;
+        }
+
+        .grid.feature .rest {
+            display: grid;
+            gap: 12px;
+            min-height: 0;
+        }
+
+        .shot {
+            position: relative;
+            min-height: 0;
+            overflow: hidden;
+            background: white;
+        }
+
+        .shot img,
+        .shot video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            display: block;
+        }
+
+        /* 有影片時，圖片只在列印（PDF）時當封面 */
+        .shot .poster {
+            display: none;
+        }
+
+        .shot.contain img {
+            object-fit: contain;
+        }
+
+        .shot figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px 14px 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        }
+
+        /* ---------- 聯絡 ---------- */
+        /* 照片欄放寬到 800px，雙手才不會被切掉 */
+        .contact {
+            grid-template-columns: minmax(0, 1fr) 800px;
+        }
+
+        .contact .photo {
+            object-position: 54% center;
+        }
+
+        .contact-body {
+            padding: 64px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--paper);
+        }
+
+        .thanks {
+            font-family: var(--serif);
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 16px;
+            white-space: nowrap;
+            line-height: 2;
+        }
+
+        /* 可點的聯絡方式：主色＋底線，外部連結再加 ↗ */
+        .contact-list a {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: rgba(206, 75, 77, 0.4);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+        .contact-list a:hover {
+            text-decoration-color: var(--primary);
+            text-decoration-thickness: 2px;
+        }
+
+        .contact-list a[href^="http"]::after {
+            content: "↗";
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 0.85em;
+            text-decoration: none;
+        }
+
+        .contact-list span {
+            display: inline-block;
+            width: 82px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .qr {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .qr figure {
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .qr img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            background: white;
+        }
+
+        /* ---------- 下載按鈕 ---------- */
+        .download-btn {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: var(--primary);
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .download-btn:hover {
+            filter: brightness(1.08);
+        }
+
+        /* ---------- 手機版面（只影響螢幕，列印仍是 16:9） ---------- */
+        @media screen and (max-width: 760px) {
+            body {
+                background: var(--paper);
+            }
+
+            .slide {
+                width: auto;
+                height: auto;
+                margin: 0 0 12px;
+                box-shadow: none;
+            }
+
+            .cover,
+            .split,
+            .contact {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cover .photo,
+            .split .photo,
+            .contact .photo {
+                height: auto;
+                aspect-ratio: 4 / 5;
+            }
+
+            .contact .photo {
+                order: -1;
+                aspect-ratio: 3 / 2;
+            }
+
+            .cover-side {
+                padding: 28px 16px 36px;
+                gap: 14px;
+            }
+
+            .cover-name {
+                writing-mode: horizontal-tb;
+                font-size: 56px;
+                border-right: 0;
+                padding-right: 0;
+                border-bottom: 4px solid var(--primary);
+                padding-bottom: 10px;
+            }
+
+            .cover-en {
+                font-size: 16px;
+            }
+
+            .split-body,
+            .contact-body {
+                padding: 28px 20px 32px;
+            }
+
+            .kv,
+            .plain {
+                font-size: 16px;
+            }
+
+            .intro-text p {
+                font-size: 18px;
+            }
+
+            .credits-bg {
+                position: relative;
+                height: 180px;
+            }
+
+            .credits-bg .photo {
+                position: static;
+                width: 100%;
+            }
+
+            .credits-bg::after {
+                display: none;
+            }
+
+            .credits-card,
+            .photo-left .credits-card {
+                position: static;
+                width: auto;
+                max-height: none;
+                margin: 0;
+                padding: 22px 20px 12px;
+                background: var(--paper);
+            }
+
+            .dark .credits-card {
+                background: #1c1c1c;
+            }
+
+            .credits-head .slide-title,
+            .slide-title {
+                font-size: 24px;
+            }
+
+            .credits-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                font-size: 14px;
+                grid-template-columns: 40px 1fr auto;
+            }
+
+            .row .r {
+                max-width: 120px;
+            }
+
+            .gallery {
+                padding: 24px 16px 20px;
+            }
+
+            .gallery-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+
+            .gallery-credits {
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .grid.feature,
+            .grid.even {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-flow: row;
+                gap: 8px;
+            }
+
+            .grid.feature .rest {
+                display: contents;
+            }
+
+            .grid.stagger>.shot {
+                height: auto;
+            }
+
+            .grid>.shot:first-child {
+                grid-column: 1 / -1;
+                aspect-ratio: 4 / 3;
+            }
+
+            /* 直的主照片在手機上用 4:5，4:3 會把頭切掉 */
+            .grid>.shot.portrait:first-child {
+                aspect-ratio: 4 / 5;
+            }
+
+            .shot {
+                aspect-ratio: 3 / 4;
+            }
+
+            /* 落單的最後一張改成整列，照原比例顯示，避免橫的截圖被裁成直的 */
+            .grid.even>.shot:last-child:nth-child(even),
+            .grid.feature .rest>.shot:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+                aspect-ratio: auto;
+            }
+
+            .grid.even>.shot:last-child:nth-child(even) img,
+            .grid.feature .rest>.shot:last-child:nth-child(odd) img,
+            .grid.even>.shot:last-child:nth-child(even) video,
+            .grid.feature .rest>.shot:last-child:nth-child(odd) video {
+                height: auto;
+                max-height: 80vh;
+            }
+
+            .contact-list {
+                font-size: 15px;
+            }
+
+            .contact-list span {
+                width: 76px;
+                font-size: 13px;
+            }
+
+            .download-btn {
+                right: 16px;
+                bottom: 16px;
+                padding: 10px 18px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .download-btn,
+            .shot video {
+                display: none;
+            }
+
+            .shot .poster {
+                display: block;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                outline: 0 !important;
+                break-after: page;
+            }
+
+            .slide:last-child {
+                break-after: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Header / Profile -->
-        <header class="profile">
-            <div class="avatar">
-                <img src="assets/images/wesley-avatar.webp" alt="Wesley Lin">
-            </div>
-            <h2 class="profile-name">林家偉 Wesley Lin</h2>
-            <div class="tags">
-                <span class="tag">#2025 藝穗精選獎</span>
-                <span class="tag">#台語母語</span>
-                <span class="tag">#肢體靈活</span>
-            </div>
-            <div class="social-links">
-                <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-            </div>
-        </header>
+    <main id="deck"></main>
 
-        <!-- CV Download Button -->
-        <a href="cv/" class="cv-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-            完整演員履歷 CV
-        </a>
-
-        <!-- Upcoming Show Button -->
-        <div id="upcoming-show"></div>
-
-        <!-- Award Highlight -->
-        <section class="award-section" id="award-section"></section>
-
-        <!-- 影視／劇場 -->
-        <section class="section">
-            <h2 class="section-title">影視／劇場</h2>
-            <div class="card-grid" id="film-theater-grid"></div>
-        </section>
-
-        <!-- Photo Highlight -->
-        <section class="highlight-section">
-            <div class="highlight-grid">
-                <div class="highlight-image">
-                    <img src="assets/images/wesley-highlight1.webp" alt="Wesley Lin" loading="lazy">
-                </div>
-                <div class="highlight-image">
-                    <img src="assets/images/wesley-highlight2.webp" alt="Wesley Lin" loading="lazy">
-                </div>
-            </div>
-            <a href="photos/" class="photos-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-                更多形象照
-            </a>
-        </section>
-
-        <!-- 廣告／MV -->
-        <section class="section">
-            <h2 class="section-title">廣告／MV</h2>
-            <div class="card-grid" id="commercial-grid"></div>
-        </section>
-
-        <!-- 語言／才藝 -->
-        <section class="section">
-            <h2 class="section-title">語言／才藝</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <span class="skill-label">專長</span>
-                    <span class="skill-name">唱歌、當代舞、網頁工程、與爸媽溝通</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-label">興趣</span>
-                    <span class="skill-name">芭蕾、踢踏、料理、保齡球、桌球、大型重機</span>
-                </div>
-            </div>
-
-            <h3 class="skills-subtitle">語言能力</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <span class="skill-level">母語</span>
-                    <span class="skill-name">國語、台語</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-level">精通</span>
-                    <span class="skill-name">英文</span>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-level">可對話</span>
-                    <span class="skill-name">日文、法文</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CV Download Button (Bottom) -->
-        <a href="cv/" class="cv-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-            點我看更多演出作品
-        </a>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 林家偉 Wesley Lin</p>
-            <p>Contact: wesley100002001@gmail.com</p>
-        </footer>
-    </div>
+    <a class="download-btn" href="cv/wesley-lin-cv.pdf" download="林家偉 演員履歷 CV.pdf">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        下載 PDF
+    </a>
 
     <script type="module">
-        import experiences from './config/experience.js';
-        import upcomingShow from './config/upcomingShows.js';
+        import credits from './config/credits.js';
+        import cvDeck from './config/cv-deck.js';
 
-        function renderUpcomingShow(show) {
-            const container = document.getElementById('upcoming-show');
-            if (!show || !show.link) {
-                container.style.display = 'none';
-                return;
-            }
-            container.innerHTML = `
-                <a href="${show.link}" target="_blank" class="upcoming-btn">
-                    <div class="upcoming-text">
-                        <span class="upcoming-title">${show.title}</span>
-                        <span class="upcoming-subtitle">${show.date}｜${show.location}</span>
+        const IMG = 'cv/images/';
+        const byId = new Map(
+            Object.values(credits).filter(Array.isArray).flat().filter((c) => c.id).map((c) => [c.id, c])
+        );
+        const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+        function credit(id) {
+            const c = byId.get(id);
+            if (!c) console.warn(`credits.js 找不到 id：${id}`);
+            return c;
+        }
+
+        // 列表上的劇名：英文或已含書名號的維持原樣，其他加《》
+        const workTitle = (t) => (/[《（(]/.test(t) || /^[A-Za-z]/.test(t) ? t : `《${t}》`);
+
+        function cover(s) {
+            return `
+                <section class="slide cover">
+                    <img class="photo" src="${IMG}${s.photo}" alt="">
+                    <div class="cover-side">
+                        <div class="cover-name">${esc(cvDeck.name)}</div>
+                        <div class="cover-en">${esc(cvDeck.nameEn)}</div>
+                        <div class="cover-award">${esc(cvDeck.headline)}</div>
                     </div>
-                    <span class="upcoming-badge">熱賣中！</span>
-                </a>
-            `;
+                </section>`;
         }
 
-        function createCard(item) {
-            const card = document.createElement('a');
-            card.className = 'card';
-            card.href = item.link || '#';
-            if (item.link) {
-                card.target = '_blank';
+        function profile(s) {
+            return `
+                <section class="slide split">
+                    <img class="photo" src="${IMG}${s.photo}" alt="">
+                    <div class="split-body">
+                        <div class="block">
+                            <h2>基本資料</h2>
+                            <dl class="kv">${cvDeck.profile.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+                        </div>
+                        <div class="block">
+                            <h2>語言能力</h2>
+                            <ul class="plain">${cvDeck.languages.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>
+                        </div>
+                        <div class="block">
+                            <h2>個人特色</h2>
+                            <p class="plain">${esc(cvDeck.traits)}</p>
+                        </div>
+                    </div>
+                </section>`;
+        }
+
+        function intro(s) {
+            return `
+                <section class="slide split">
+                    <img class="photo" src="${IMG}${s.photo}" alt="">
+                    <div class="split-body intro-text">
+                        ${cvDeck.intro.map((p) => `<p>${esc(p)}</p>`).join('')}
+                    </div>
+                </section>`;
+        }
+
+        function creditRow(c, showCompany, plain) {
+            const right = showCompany ? c.company : c.role;
+            return `
+                <div class="row">
+                    <span class="y">${esc(c.year)}</span>
+                    <span>${esc(plain ? c.title : workTitle(c.title))}${c.award ? '<span class="badge">藝穗精選獎</span>' : ''}</span>
+                    <span class="r">${esc(right)}</span>
+                </div>`;
+        }
+
+        // 依行數把分類平均分到左右兩欄（分類標題算一行）
+        function splitColumns(groups) {
+            const total = groups.reduce((n, g) => n + g.ids.length + 1, 0);
+            const left = [];
+            let count = 0;
+            for (const g of groups) {
+                if (left.length && count + (g.ids.length + 1) / 2 > total / 2) break;
+                left.push(g);
+                count += g.ids.length + 1;
             }
-
-            const thumbnail = item.thumbnail || 'https://via.placeholder.com/300x200';
-
-            const languageTag = item.language ? `<span class="language-tag">${item.language}</span>` : '';
-
-            card.innerHTML = `
-                <div class="card-image">
-                    <img src="${thumbnail}" alt="${item.title}" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>${item.title}</h3>
-                    <p class="role">${item.role}</p>
-                    <p class="year">${item.year}${languageTag}</p>
-                </div>
-            `;
-
-            return card;
+            return [left, groups.slice(left.length)];
         }
 
-        function renderSection(containerId, items) {
-            const container = document.getElementById(containerId);
-            items.forEach(item => {
-                container.appendChild(createCard(item));
+        function creditsSlide(s) {
+            return `
+                <section class="slide credits ${s.cardSide === 'left' ? 'photo-right' : 'photo-left'} ${s.tone === 'dark' ? 'dark' : ''}">
+                    <div class="credits-bg" style="--shift: ${-(s.photoShift || 0)}px"><img class="photo" src="${IMG}${s.background}" alt=""></div>
+                    <div class="credits-card">
+                        <div class="credits-head">
+                            <h2 class="slide-title">${esc(s.title)}</h2>
+                            <span class="eyebrow">${esc(s.roleLabel)}</span>
+                        </div>
+                        <div class="credits-cols">
+                            ${splitColumns(s.groups).map((col) => `<div>${col.map((g) => `
+                                <div class="group">
+                                    <div class="group-label">${esc(g.label)}</div>
+                                    ${g.ids.map(credit).filter(Boolean).map((c) => creditRow(c, s.showCompany, g.plain)).join('')}
+                                </div>`).join('')}</div>`).join('')}
+                        </div>
+                    </div>
+                </section>`;
+        }
+
+        function shot(p) {
+            return `
+                <figure class="shot ${p.fit === 'contain' ? 'contain' : ''}">
+                    ${p.video ? `<video src="${IMG}${p.video}" poster="${IMG}${p.src}" autoplay muted loop playsinline></video>` : ''}
+                    <img ${p.video ? 'class="poster" ' : ''}src="${IMG}${p.src}" alt=""${p.pos ? ` style="object-position: ${p.pos}"` : ''}>
+                    ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
+                </figure>`;
+        }
+
+        // 主照片之外的照片排法：1 張單獨、2 張上下、3 張並排、4 張以上兩欄
+        function restLayout(n) {
+            if (n <= 1) return 'grid-template-rows: 1fr;';
+            if (n === 2) return 'grid-template-rows: 1fr 1fr;';
+            if (n === 3) return 'grid-template-columns: repeat(3, 1fr);';
+            return `grid-template-columns: 1fr 1fr; grid-template-rows: repeat(${Math.ceil(n / 2)}, 1fr);`;
+        }
+
+        function gallery(s) {
+            const list = (s.creditIds || []).map(credit).filter(Boolean);
+            const [first, ...rest] = s.photos;
+            const grid = s.layout === 'feature' && rest.length
+                ? `<div class="grid feature">${shot(first)}<div class="rest" style="${restLayout(rest.length)}">${rest.map(shot).join('')}</div></div>`
+                : `<div class="grid even ${s.layout === 'stagger' ? 'stagger' : ''}">${s.photos.map(shot).join('')}</div>`;
+
+            return `
+                <section class="slide gallery">
+                    <div class="gallery-head">
+                        <div>
+                            <h2 class="slide-title">${esc(s.title)}</h2>
+                            ${s.subtitle ? `<p class="slide-subtitle">${esc(s.subtitle)}</p>` : ''}
+                        </div>
+                        ${list.length ? `<ul class="gallery-credits">${list.map((c) => `<li><span>${esc(c.year)}</span>${esc(c.title)}</li>`).join('')}</ul>` : ''}
+                    </div>
+                    ${grid}
+                </section>`;
+        }
+
+        function contact(s) {
+            const items = [
+                ['Email', cvDeck.email, `mailto:${cvDeck.email}`],
+                ['Phone', cvDeck.phone, `tel:${String(cvDeck.phone).replace(/-/g, '')}`],
+                ['LINE', cvDeck.line],
+                ['Instagram', cvDeck.instagram, `https://www.instagram.com/${String(cvDeck.instagram).replace('@', '')}/`]
+            ].filter(([, v]) => v);
+            return `
+                <section class="slide contact">
+                    <div class="contact-body">
+                        <p class="thanks">謝謝您閱讀完畢，<br>期待有機會一起合作！</p>
+                        <p class="eyebrow" style="margin-bottom:8px">CONTACT</p>
+                        <ul class="contact-list">${items.map(([k, v, href]) => `<li><span>${k}</span>${href ? `<a href="${esc(href)}">${esc(v)}</a>` : esc(v)}</li>`).join('')}</ul>
+                        <div class="qr">
+                            ${s.qr.map((q) => `<figure><img src="${IMG}${q.src}" alt="${esc(q.label)} QR code"><figcaption>${esc(q.label)}</figcaption></figure>`).join('')}
+                        </div>
+                    </div>
+                    <img class="photo" src="${IMG}${s.photo}" alt="">
+                </section>`;
+        }
+
+        const RENDER = { cover, profile, intro, credits: creditsSlide, gallery, contact };
+        document.getElementById('deck').innerHTML = cvDeck.slides.map((s) => RENDER[s.type](s)).join('');
+
+        // 標記直的照片，手機版面依此決定主照片比例
+        document.querySelectorAll('.shot img').forEach((img) => {
+            const mark = () => img.closest('.shot').classList.toggle('portrait', img.naturalHeight > img.naturalWidth);
+            img.complete ? mark() : img.addEventListener('load', mark);
+        });
+
+
+        function checkOverflow() {
+            document.querySelectorAll('.slide, .credits-card').forEach((el) => {
+                const slide = el.closest('.slide');
+                if (el.scrollHeight > el.clientHeight + 1) slide.classList.add('overflow');
             });
         }
-
-        function renderAward(award) {
-            const container = document.getElementById('award-section');
-            const thumbnail = award.thumbnail || 'https://via.placeholder.com/600x338';
-
-            container.innerHTML = `
-                <div class="award-image">
-                    <img src="${thumbnail}" alt="${award.badge}" loading="lazy">
-                </div>
-                <div class="award-content">
-                    <span class="award-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C9.243 2 7 4.243 7 7v1H4a1 1 0 0 0-1 1v3c0 2.206 1.794 4 4 4h.535c.463 1.167 1.209 2.206 2.182 3H9a1 1 0 0 0-1 1v2H6v2h12v-2h-2v-2a1 1 0 0 0-1-1h-.717c.973-.794 1.719-1.833 2.182-3H17c2.206 0 4-1.794 4-4V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5zM5 12v-2h2v3c0 .176.012.349.028.52C5.875 13.203 5 12.21 5 12zm14 0c0 1.21-.875 2.203-2.028 2.52.016-.171.028-.344.028-.52V10h2v2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v5.5c0 1.93-1.57 3.5-3.5 3.5h-1c-1.93 0-3.5-1.57-3.5-3.5V7z"/>
-                        </svg>
-                        ${award.badge}
-                    </span>
-                    <h3 class="award-title">${award.title}</h3>
-                    <p class="award-desc">${award.description}</p>
-                </div>
-            `;
-        }
-
-        renderUpcomingShow(upcomingShow);
-        renderAward(experiences.award);
-        renderSection('film-theater-grid', experiences.filmTheater);
-        renderSection('commercial-grid', experiences.commercial);
+        // 手機版面高度不固定，只在桌面寬度檢查
+        if (matchMedia('(min-width: 761px)').matches) document.fonts.ready.then(checkOverflow);
     </script>
 </body>
 

@@ -7,7 +7,6 @@ const cvDeck = {
   email: "wesley100002001@gmail.com",
   phone: "0926-324-469",
   line: "wesley100002001",
-  website: "wesley100002001.github.io/wesley.cwlin",
   instagram: "@wesley.cwlin",
 
   profile: [

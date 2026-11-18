@@ -12,27 +12,29 @@ This is Wesley Lin's actor portfolio website, hosted on GitHub Pages. It's a sta
 npm run dev          # Start local server at http://localhost:41789
 ```
 
-Then visit http://localhost:41789/wesley.cwlin/ to preview the portfolio.
+Then visit http://localhost:41789/wesley.cwlin/ to preview the CV.
 
 ## Architecture
 
 - `/index.html` - Root landing page (minimal, for GitHub Pages)
-- `/wesley.cwlin/` - Main portfolio directory
-  - `index.html` - Portfolio page with sections: 戲劇, 廣告, 舞台劇, 其它才藝
-  - `style.css` - All styling (mobile-first, responsive)
-  - `assets/images/` - Portfolio images
+- `/wesley.cwlin/` - Main directory; the CV is the homepage
+  - `index.html` - Main CV as 16:9 slides (desktop), stacked layout on mobile; prints to PDF
   - `config/credits.js` - Master list of all credits (source for every CV version)
   - `config/cv-deck.js` - Which credits/photos the main CV uses, plus profile and contact info
-  - `cv/index.html` - Main CV as 16:9 slides (desktop), stacked layout on mobile; prints to PDF
+  - `cv/images/` - CV photos and video
+  - `cv/index.html` - Old CV URL, redirects to `/wesley.cwlin/`
   - `cv/credits.html` - Viewer for the master credits list (noindex)
   - `cv/og.html` - Template for the share image `cv/og-image.jpg` (re-screenshot at 1200×630 when changed)
-- `/cv/index.html` - Short URL redirecting to `/wesley.cwlin/cv/`
+  - `photos/index.html` - Standalone page of headshots
+- `/cv/index.html` - Short URL redirecting to `/wesley.cwlin/`
 
 ## Deployment
 
 GitHub Pages deploys via `.github/workflows/pages.yml` on push to master. The workflow prints the CV page to `wesley.cwlin/cv/wesley-lin-cv.pdf` with headless Chrome (the PDF is not in git) and only publishes `index.html`, `sitemap.xml`, `cv/`, `wesley.cwlin/`.
 
 `npm run cv:pdf` (with `npm run dev` running) writes a local copy of the PDF to the Desktop.
+
+Photos are cropped in the image files themselves (not with JS) so the CI-printed PDF matches the page; `pos` in `cv-deck.js` only sets the CSS crop position.
 
 ## Design System
 
