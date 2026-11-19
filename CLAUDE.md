@@ -25,7 +25,6 @@ Then visit http://localhost:41789/wesley.cwlin/ to preview the CV.
   - `cv/index.html` - Old CV URL, redirects to `/wesley.cwlin/`
   - `cv/credits.html` - Viewer for the master credits list (noindex)
   - `cv/og.html` - Template for the share image `cv/og-image.jpg` (re-screenshot at 1200×630 when changed)
-  - `photos/index.html` - Standalone page of headshots
 - `/cv/index.html` - Short URL redirecting to `/wesley.cwlin/`
 
 ## Deployment
