@@ -4,6 +4,7 @@
   "description": "Wesley Lin's Actor Portfolio",
   "scripts": {
     "dev": "python3 -m http.server 41789",
-    "cv:pdf": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless=new --no-pdf-header-footer --virtual-time-budget=15000 --print-to-pdf=\"$HOME/Desktop/My Documents/Application/Performer/林家偉 CV 2026.pdf\" http://localhost:41789/wesley.cwlin/"
+    "cv:pdf": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless=new --no-pdf-header-footer --virtual-time-budget=15000 --print-to-pdf=\"$HOME/Desktop/My Documents/Application/Performer/林家偉 CV 2026.pdf\" http://localhost:41789/wesley.cwlin/",
+    "cv:card": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless=new --hide-scrollbars --force-device-scale-factor=2 --window-size=1754,1240 --virtual-time-budget=15000 --screenshot=\"$HOME/Desktop/林家偉 Modal Card.jpg\" \"http://localhost:41789/wesley.cwlin/cv/modal-card.html?shot\""
   }
 }

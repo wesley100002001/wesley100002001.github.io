@@ -1,4 +1,7 @@
 // 主力版 CV 投影片的選稿：作品資料在 credits.js，這裡只決定放哪些、放在哪一頁
+// 身材數據 CV 和 modal card 共用，改這裡就好
+const stats = { age: 38, height: 184, weight: 73, bust: 92, waist: 81, hip: 101, shoe: 27.5 };
+
 const cvDeck = {
   name: "林家偉",
   nameEn: "CHIA WEI LIN",
@@ -11,15 +14,37 @@ const cvDeck = {
 
   profile: [
     ["姓名", "林家偉 / Wesley"],
-    ["年齡", "38y"],
-    ["身材", "184cm / 73kg"],
-    ["三圍", "92 / 81 / 101cm"],
-    ["鞋號", "27.5"],
+    ["年齡", `${stats.age}y`],
+    ["身材", `${stats.height}cm / ${stats.weight}kg`],
+    ["三圍", `${stats.bust} / ${stats.waist} / ${stats.hip}cm`],
+    ["鞋號", `${stats.shoe}`],
     ["專長", "唱歌、當代舞、網頁工程、與爸媽溝通"],
     ["興趣", "芭蕾、踢踏、料理、保齡球、桌球"]
   ],
   languages: ["國語、台語（母語）", "英文（精通）", "日文、法文（可對話）"],
   traits: "親和力高、書生氣質、娃娃臉、肢體靈活",
+  stats,
+
+  // Modal card（cv/modal-card.html）：modalCard 是下載用的那一張（從 1 開始數），?v=2 可預覽其他張
+  // layout 是版型，photos 依序填進版型的格子；pos 同 CV，是裁切對齊位置
+  modalCard: 5,
+  modalCards: [
+    { title: "清新白T", layout: "hero", theme: "light",
+      photos: [{ src: "look1-2.jpg", pos: "center 30%" }, { src: "cover.jpg", pos: "center 25%" }, { src: "look1-3.jpg", pos: "center 20%" },
+        { src: "look1-4.jpg", pos: "center 40%" }, { src: "look1-1.jpg", pos: "center 40%" }] },
+    { title: "西裝專業", layout: "sidebar", theme: "gray",
+      photos: [{ src: "look4-1.jpg", pos: "center 20%" }, { src: "look4-3.jpg", pos: "center 20%" }, { src: "intro.jpg", pos: "center 20%" },
+        { src: "look3-2.jpg", pos: "center 20%" }, { src: "look4-2.jpg", pos: "center 40%" }] },
+    { title: "冷調時尚", layout: "banner", theme: "dark",
+      photos: [{ src: "look2-4.jpg", pos: "center 25%" }, { src: "look2-1.jpg", pos: "center top" }, { src: "look5-5.jpg", pos: "50% center" },
+        { src: "look2-2.jpg", pos: "center top" }, { src: "look2-3.jpg", pos: "center 40%" }] },
+    { title: "反差雙面", layout: "split", theme: "split",
+      photos: [{ src: "cover.jpg", pos: "center 30%" }, { src: "look1-3.jpg", pos: "center 20%" }, { src: "look1-4.jpg", pos: "center 40%" },
+        { src: "look2-4.jpg", pos: "center 30%" }, { src: "look2-1.jpg", pos: "center top" }, { src: "look2-3.jpg", pos: "center 40%" }] },
+    { title: "極簡經典", layout: "classic", theme: "light",
+      photos: [{ src: "profile.jpg", pos: "center 25%" }, { src: "cover.jpg", pos: "center 25%" }, { src: "look4-3.jpg", pos: "center 20%" },
+        { src: "look4-2.jpg", pos: "center 40%" }, { src: "look1-4.jpg", pos: "center 40%" }] }
+  ],
 
   intro: [
     "你好，我是林家偉，從劇場開始，已經演戲超過十年，演過超過 30 檔大小製作。",

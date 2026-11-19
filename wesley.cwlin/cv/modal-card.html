@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>林家偉 Modal Card</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 畫布固定 A4 橫式 1754×1240（150dpi），CI 用 2 倍截圖成 JPG */
+        :root {
+            --primary: #ce4b4d;
+            --serif: 'Noto Serif TC', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Noto Sans TC', sans-serif;
+            background: #d9d6d3;
+            line-height: 1.5;
+        }
+
+        body.shot {
+            background: none;
+        }
+
+        .card {
+            --bg: #fff;
+            --ink: #2a2a2a;
+            --muted: #8a8a8a;
+            --line: #ebe6e2;
+            width: 1754px;
+            height: 1240px;
+            padding: 56px;
+            display: grid;
+            gap: 20px;
+            background: var(--bg);
+            color: var(--ink);
+            overflow: hidden;
+        }
+
+        body:not(.shot) .card {
+            margin: 24px auto;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .card.gray {
+            --bg: #f1efed;
+        }
+
+        .card.dark {
+            --bg: #2c333b;
+            --ink: #f4f2f0;
+            --muted: #a3abb4;
+            --line: #48515b;
+        }
+
+        /* 左半白、右半深色，中間資料欄用主色 */
+        .card.split {
+            background: linear-gradient(90deg, #fff 50%, #2c333b 50%);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 0;
+        }
+
+        .card img:nth-of-type(1) { grid-area: a; }
+        .card img:nth-of-type(2) { grid-area: b; }
+        .card img:nth-of-type(3) { grid-area: c; }
+        .card img:nth-of-type(4) { grid-area: d; }
+        .card img:nth-of-type(5) { grid-area: e; }
+        .card img:nth-of-type(6) { grid-area: f; }
+
+        /* ---------- 資料 ---------- */
+        .info {
+            grid-area: info;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 28px;
+            min-width: 0;
+        }
+
+        .info-body {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .name {
+            font-family: var(--serif);
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 0.06em;
+        }
+
+        .name-en {
+            margin-top: 10px;
+            font-size: 20px;
+            letter-spacing: 0.3em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 24px;
+            row-gap: 8px;
+            font-size: 22px;
+        }
+
+        .stats dt {
+            color: var(--muted);
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .stats dd {
+            font-weight: 500;
+        }
+
+        .contact {
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* ---------- 版型 ---------- */
+        /* hero：左大頭、右 2×2、底部數據橫條 */
+        .hero {
+            grid-template-columns: 1fr 360px 360px;
+            grid-template-rows: 1fr 1fr auto;
+            grid-template-areas: "a b c" "a d e" "info info info";
+        }
+
+        .hero .info {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding-top: 8px;
+        }
+
+        .hero .stats {
+            grid-auto-flow: column;
+            grid-template-columns: none;
+            grid-template-rows: auto auto;
+            column-gap: 44px;
+            row-gap: 2px;
+        }
+
+        .hero .stats dd {
+            font-size: 28px;
+        }
+
+        .hero .info-body {
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 64px;
+        }
+
+        .hero .contact {
+            border: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        /* sidebar：主圖＋四格，數據在右側欄 */
+        .sidebar {
+            grid-template-columns: 1.35fr 1fr 1fr 380px;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "a b c info" "a d e info";
+        }
+
+        .sidebar .info {
+            padding-left: 24px;
+        }
+
+        /* banner：上方橫幅大頭，下排四張 */
+        .banner {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 0.9fr 1.1fr;
+            grid-template-areas: "a a a info" "b c d e";
+        }
+
+        .banner .info {
+            padding-left: 24px;
+        }
+
+        /* split：左暖右冷，中間資料 */
+        .split {
+            grid-template-columns: 1fr 1fr 380px 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "a a info d d" "b c info e f";
+        }
+
+        .split .info {
+            --ink: #fff;
+            --muted: rgba(255, 255, 255, 0.75);
+            --line: rgba(255, 255, 255, 0.35);
+            background: var(--primary);
+            color: var(--ink);
+            padding: 40px 32px;
+            justify-content: center;
+        }
+
+        .split .name-en {
+            color: #fff;
+            font-size: 17px;
+            letter-spacing: 0.15em;
+        }
+
+        /* classic：左大頭＋資料，右 2×2 */
+        .classic {
+            grid-template-columns: 1.6fr 1fr 1fr;
+            grid-template-rows: 1fr 0.42fr 0.58fr;
+            grid-template-areas: "a b c" "a d e" "info d e";
+        }
+
+        .classic .info {
+            justify-content: flex-start;
+            gap: 18px;
+            padding-top: 8px;
+        }
+
+        .classic .name {
+            font-size: 52px;
+        }
+
+        .classic .info-body {
+            flex-direction: row;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .classic .contact {
+            border: 0;
+            padding: 0;
+        }
+
+        /* ---------- 預覽用的版型切換（截圖時隱藏） ---------- */
+        .switcher {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            gap: 6px;
+            padding: 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .switcher a {
+            padding: 4px 12px;
+            border-radius: 999px;
+            color: #2a2a2a;
+            text-decoration: none;
+        }
+
+        .switcher a.on {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        body.shot .switcher {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="switcher"></nav>
+    <main id="card"></main>
+
+    <script type="module">
+        import cvDeck from '../config/cv-deck.js';
+
+        const IMG = 'images/';
+        const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+        const params = new URLSearchParams(location.search);
+        const cards = cvDeck.modalCards;
+        const n = Math.min(Math.max(parseInt(params.get('v'), 10) || cvDeck.modalCard, 1), cards.length);
+        const card = cards[n - 1];
+        // ?shot：CI 截圖用，不要切換列也不要縮放
+        const shot = params.has('shot');
+        document.body.classList.toggle('shot', shot);
+
+        const s = cvDeck.stats;
+        const stats = [
+            ['年齡', `${s.age}`],
+            ['身高', `${s.height} cm`],
+            ['體重', `${s.weight} kg`],
+            ['三圍', `${s.bust} / ${s.waist} / ${s.hip}`],
+            ['鞋號', `${s.shoe}`]
+        ];
+        const info = `
+            <div class="info">
+                <div>
+                    <div class="name">${esc(cvDeck.name)}</div>
+                    <div class="name-en">${esc(cvDeck.nickname)} · ${esc(cvDeck.nameEn)}</div>
+                </div>
+                <div class="info-body">
+                    <dl class="stats">${stats.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+                    <div class="contact">
+                        ${esc(cvDeck.phone)}<br>${esc(cvDeck.email)}<br>IG ${esc(cvDeck.instagram)}
+                    </div>
+                </div>
+            </div>`;
+
+        const el = document.getElementById('card');
+        el.className = `card ${card.layout} ${card.theme}`;
+        el.innerHTML = card.photos.map((p) => `<img src="${IMG}${esc(p.src)}" alt=""${p.pos ? ` style="object-position:${esc(p.pos)}"` : ''}>`).join('') + info;
+        document.title = `林家偉 Modal Card｜${card.title}`;
+
+        if (!shot) {
+            document.querySelector('.switcher').innerHTML = cards
+                .map((c, i) => `<a href="?v=${i + 1}"${i + 1 === n ? ' class="on"' : ''}>${i + 1} ${esc(c.title)}</a>`)
+                .join('');
+            const fit = () => { el.style.zoom = Math.min(1, (innerWidth - 32) / 1754); };
+            fit();
+            addEventListener('resize', fit);
+        }
+    </script>
+</body>
+
+</html>
